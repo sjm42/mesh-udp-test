@@ -2,6 +2,8 @@
   <dictionary name="project">
     <words>
       <w>loglvl</w>
+      <w>meshtastic</w>
+      <w>protobufs</w>
     </words>
   </dictionary>
 </component>

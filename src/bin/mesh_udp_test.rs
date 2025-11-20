@@ -3,12 +3,9 @@
 use std::{io, io::Write, net};
 
 use clap::Parser;
-use meshtastic_protobufs as protobufs;
 use prost::Message;
 
-
 // use tokio_util::{codec::BytesCodec, udp::UdpFramed};
-
 
 use mesh_udp_test::*;
 
@@ -39,7 +36,9 @@ async fn run_server(opts: &OptsCommon) -> anyhow::Result<()> {
         let (len, addr) = sock.recv_from(&mut buf).await?;
         info!("Received {len} bytes from {addr}:\n{:02x?}", &buf[0..len]);
 
-        let res = protobufs::meshtastic::FromRadio::decode(&buf[..len])?;
+        // let res = protobufs::FromRadio::decode(&buf[..len]);
+        let res = protobufs::MeshPacket::decode(&buf[..len]);
+        info!("Decoded packet:\n{res:?}");
     }
     Ok(())
 }
