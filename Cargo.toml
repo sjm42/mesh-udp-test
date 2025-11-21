@@ -2,7 +2,7 @@
 
 [package]
 name = "mesh_udp_test"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2024"
 resolver = "2"
 
@@ -19,7 +19,6 @@ anyhow = "1"
 clap = { version = "4", features = ["derive"] }
 # futures = { version = "0" }
 hex-literal = "1"
-meshtastic_protobufs = "2"
 pretty-hex = "0"
 prost = "0.14"
 rust-crypto = "0"
