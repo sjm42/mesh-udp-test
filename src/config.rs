@@ -13,8 +13,8 @@ pub struct OptsCommon {
     #[arg(short, long)]
     pub trace: bool,
 
-    #[arg(short, long, default_value = "0.0.0.0:4403")]
-    pub listen: String,
+    #[arg(short, long, default_value = "10.0.0.1")]
+    pub interface: String,
 }
 
 impl OptsCommon {
@@ -37,10 +37,10 @@ impl OptsCommon {
             .init();
 
         info!("Starting up {name} v{}...", env!("CARGO_PKG_VERSION"));
-        // debug!("Git branch: {}", env!("GIT_BRANCH"));
-        // debug!("Git commit: {}", env!("GIT_COMMIT"));
-        // debug!("Source timestamp: {}", env!("SOURCE_TIMESTAMP"));
-        // debug!("Compiler version: {}", env!("RUSTC_VERSION"));
+        debug!("Git branch: {}", env!("GIT_BRANCH"));
+        debug!("Git commit: {}", env!("GIT_COMMIT"));
+        debug!("Source timestamp: {}", env!("SOURCE_TIMESTAMP"));
+        debug!("Compiler version: {}", env!("RUSTC_VERSION"));
     }
 }
 
