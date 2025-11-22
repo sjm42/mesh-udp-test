@@ -135,7 +135,7 @@ async fn run_server(opts: &OptsCommon) -> anyhow::Result<()> {
                 let info = String::from_utf8_lossy(&rx_data.payload);
                 info!("Got Nodeinfo:\n{info}");
                 let nodeinfo =
-                    protobufs::NodeInfo::decode(rx_data.payload.as_slice()).unwrap_or_default();
+                    protobufs::User::decode(rx_data.payload.as_slice()).unwrap_or_default();
                 info!("Parsed Nodeinfo:\n{nodeinfo:?}");
             }
             Ok(PortNum::PositionApp) => {
