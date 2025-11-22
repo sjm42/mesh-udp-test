@@ -4,6 +4,7 @@
       <w>datalen</w>
       <w>loglvl</w>
       <w>meshtastic</w>
+      <w>nodeinfo</w>
       <w>protobufs</w>
     </words>
   </dictionary>
